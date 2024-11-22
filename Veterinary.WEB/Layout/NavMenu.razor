@@ -17,22 +17,13 @@
             </NavLink>
         </div>
 
-        <AuthorizeView Roles="Admin">
-            <Authorized>
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="users">
-                        <span class="oi oi-people" aria-hidden="true"></span> Usuarios
-                    </NavLink>
-                </div>
-            </Authorized>
-        </AuthorizeView>
-
+       
         <AuthorizeView Roles="Admin">
             <Authorized>
 
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="owners" Match="NavLinkMatch.All">
-                        <span aria-hidden="true"></span> <i class="bi bi-person-standing-dress"></i>Owners
+                        <span aria-hidden="true"></span> <i class="bi bi-list-nested-nav-menu"></i>Owners
                     </NavLink>
                 </div>
             </Authorized>

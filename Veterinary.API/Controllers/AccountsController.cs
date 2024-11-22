@@ -1,4 +1,5 @@
 ﻿
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Veterinary.API.Helpers;
@@ -21,7 +22,7 @@ namespace Veterinary.API.Controllers
         private readonly IFileStorage _fileStorage;
         private readonly string _container;
 
-        public AccountsController(IUserHelper userHelper, IConfiguration configuration,IFileStorage fileStorage)
+        public AccountsController(IUserHelper userHelper, IConfiguration configuration, IFileStorage fileStorage)
         {
             _userHelper = userHelper;
             _configuration = configuration;
@@ -84,10 +85,10 @@ namespace Veterinary.API.Controllers
                 currentUser.Document = user.Document;
                 currentUser.FirstName = user.FirstName;
                 currentUser.LastName = user.LastName;
-            
+
                 currentUser.PhoneNumber = user.PhoneNumber;
                 currentUser.Photo = !string.IsNullOrEmpty(user.Photo) && user.Photo != currentUser.Photo ? user.Photo : currentUser.Photo;
-              
+
 
                 var result = await _userHelper.UpdateUserAsync(currentUser);
                 if (result.Succeeded)
@@ -140,3 +141,4 @@ namespace Veterinary.API.Controllers
         }
     }
 }
+
